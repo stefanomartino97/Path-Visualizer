@@ -1,0 +1,59 @@
+@import "./variables";
+
+#nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: $nav-bar-backgound-color;
+  padding: 10px;
+
+  #logo {
+    font-family: $font-family;
+    font-size: $logo-font-size;
+    margin-left: 10px;
+    margin-right: 20px;
+    color: $logo-color;
+  }
+
+  .dropdown {
+    position: relative;
+    .dropdown-content {
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: $nav-bar-backgound-color;
+      border-radius: 8px;
+      padding: 5px 0px;
+      width: 100%;
+    }
+
+    &:hover .dropdown-menu {
+      display: block;
+    }
+  }
+
+  .nav-bar-button {
+    font-family: $font-family;
+    color: $nav-bar-button-color;
+    font-size: $nav-bar-font-size;
+    padding: 8px 30px;
+    border-radius: 8px;
+    transition: 0.3s;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  i {
+    margin-left: 5px;
+  }
+
+  .nav-bar-button:hover {
+    color: $nav-bar-button-color-hover;
+    background-color: $nav-bar-backgound-color-hover;
+    cursor: pointer;
+  }
+}

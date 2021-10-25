@@ -1,0 +1,77 @@
+#nav-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+  padding: 10px;
+}
+
+#nav-bar #logo {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 24px;
+  margin-left: 10px;
+  margin-right: 20px;
+  color: white;
+}
+
+#nav-bar .dropdown {
+  position: relative;
+}
+
+#nav-bar .dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: black;
+  border-radius: 8px;
+  padding: 5px 0px;
+  width: 100%;
+}
+
+#nav-bar .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+#nav-bar .nav-bar-button {
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+  font-size: 18px;
+  padding: 8px 30px;
+  border-radius: 8px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+#nav-bar i {
+  margin-left: 5px;
+}
+
+#nav-bar .nav-bar-button:hover {
+  color: white;
+  background-color: blue;
+  cursor: pointer;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*# sourceMappingURL=styles.css.map */
