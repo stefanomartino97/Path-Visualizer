@@ -20,6 +20,20 @@
   padding: 10px;
 }
 
+#nav-bar #visualize {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#nav-bar #visualize:hover {
+  background-color: #dc6400;
+}
+
 #nav-bar #logo {
   font-family: "Ubuntu", sans-serif;
   font-size: 24px;
@@ -70,7 +84,8 @@
 }
 
 #nav-bar .nav-bar-button:hover,
-#nav-bar #visualize {
+#nav-bar #visualize,
+#nav-bar .active {
   color: white;
   background-color: #005a69;
   cursor: pointer;

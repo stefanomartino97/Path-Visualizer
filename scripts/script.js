@@ -1,6 +1,7 @@
 import { createGrid } from './grid.js';
 import { placeStartAndEnd } from './grid.js';
 import { setDragAndDrop } from './dragAndDrop.js';
+import { addClicksToNavBar } from './functions.js';
 //Create the grid
 createGrid();
 
@@ -9,3 +10,5 @@ placeStartAndEnd();
 
 //Set Drag and Drop
 setDragAndDrop();
+
+addClicksToNavBar();

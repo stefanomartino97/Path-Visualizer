@@ -7,6 +7,16 @@
   background-color: $nav-bar-backgound-color;
   padding: 10px;
 
+  #visualize {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+
+    &:hover {
+      background-color: $visualize-background-color-hover;
+    }
+  }
+
   #logo {
     font-family: $font-family;
     font-size: $logo-font-size;
@@ -52,7 +62,8 @@
   }
 
   .nav-bar-button:hover,
-  #visualize {
+  #visualize,
+  .active {
     color: $nav-bar-button-color-hover;
     background-color: $nav-bar-backgound-color-hover;
     cursor: pointer;

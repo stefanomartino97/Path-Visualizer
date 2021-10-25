@@ -25,11 +25,13 @@
             <!-- Algorithms -->
             <div class="dropdown">
                 <div class="dropdown-content">
-                    <div class="nav-bar-button">Algorithms <i class="fas fa-angle-down"></i></div>
+                    <div class="nav-bar-button">Algorithm <i class="fas fa-angle-down"></i></div>
                 </div>
                 <div class="dropdown-menu">
-                    <div class="nav-bar-button">Algorithm 1</div>
-                    <div class="nav-bar-button">Algorithm 2</div>
+                    <div class="nav-bar-button algorithm" id="Dijkstra">Dijkstra</div>
+                    <div class="nav-bar-button algorithm" id="Bellman">Bellman</div>
+                    <div class="nav-bar-button algorithm" id="DFS">DFS</div>
+                    <div class="nav-bar-button algorithm" id="BFS">BFS</div>
                 </div>
             </div>
 
@@ -46,7 +48,7 @@
             </div>
 
             <!-- Visualize -->
-            <div class="nav-bar-button" id="visualize">Visualize</div>
+            <div class="nav-bar-button" id="visualize">Visualize&nbsp;<span id="algorithm-name"></span></div>
 
             <!-- Clear Board -->
             <div class="nav-bar-button">Clear Board</div>
@@ -63,9 +65,9 @@
                     <div class="nav-bar-button">Speed <i class="fas fa-angle-down"></i></div>
                 </div>
                 <div class="dropdown-menu">
-                    <div class="nav-bar-button">Slow</div>
-                    <div class="nav-bar-button">Medium</div>
-                    <div class="nav-bar-button">Fast</div>
+                    <div class="nav-bar-button speed" id="slow">Slow</div>
+                    <div class="nav-bar-button speed" id="medium">Medium</div>
+                    <div class="nav-bar-button speed" id="fast">Fast</div>
                 </div>
             </div>
 
@@ -120,6 +122,5 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
         integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
-
 </body>
 </html>
