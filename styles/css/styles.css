@@ -192,6 +192,10 @@
   margin-top: -4px;
 }
 
+#legend-container #legend .legend-field input[type="range"]:hover::-webkit-slider-thumb {
+  background: #005a69;
+}
+
 #legend-container #legend .legend-field input[type="range"]:focus {
   outline: none;
 }
