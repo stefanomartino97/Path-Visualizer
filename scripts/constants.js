@@ -1,8 +1,8 @@
 const ROWS = 20;
 const COLUMNS = 45;
 
-const START_ROW = 5;
-const START_COLUMN = 5;
+const START_ROW = 0;
+const START_COLUMN = 0;
 
 const END_ROW = 10;
 const END_COLUMN = 30;

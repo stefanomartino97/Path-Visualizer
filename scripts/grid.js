@@ -25,6 +25,9 @@ function placeStartAndEnd(){
     const startCell = document.getElementById(`row=${START_ROW}col=${START_COLUMN}`);
     const endCell = document.getElementById(`row=${END_ROW}col=${END_COLUMN}`);
 
+    startCell.classList.add('start');
+    endCell.classList.add('end');
+
     startCell.appendChild(startNode);
     endCell.appendChild(endNode);
 }
