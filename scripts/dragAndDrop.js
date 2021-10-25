@@ -9,13 +9,9 @@ const droppableOptions = {
     drop: handleDrop
 };
 
-function handleDrop(event, ui){
-   //Trova la classe del draggable
-        //Rendi quel draggable non draggable e droppable
-        //Rendi questo droppable non droppable e draggable
-    //Aggiungi classe
-    //Aggiungi icona
+let canPaintWall = false;
 
+function handleDrop(event, ui){
     const draggableClass = ui.draggable[0].classList;
     const _class = draggableClass.contains('start') ? 'start' : 'end';
     
@@ -36,7 +32,8 @@ function handleDrop(event, ui){
     
 }
 
-function setDragAndDrop(){
+//Deal Drag&Drop of Start and End cells
+function setStartAndEnd(){
     const cells = $('.cell');
     cells.droppable(droppableOptions);
 
@@ -50,6 +47,35 @@ function setDragAndDrop(){
     
     start.draggable(draggableOptions);
     end.draggable(draggableOptions);
+}
+
+function setPaint(){
+    const cells = document.getElementsByClassName('cell');
+    for (let i = 0; i < cells.length; i++){
+        if (!cells[i].classList.contains('start') && !cells[i].classList.contains('end')){
+
+            cells[i].onmousedown = () => {
+                cells[i].classList.add('wall');
+                canPaintWall = true;
+            }
+
+            cells[i].onmouseover = () => {
+                if (canPaintWall){
+                     cells[i].classList.add('wall');
+                }
+            }
+
+            cells[i].onmouseup = (event) => {
+                canPaintWall = false;
+                
+            }
+        }
+    }
+}
+
+function setDragAndDrop(){
+    setStartAndEnd();
+    setPaint();
 }
 
 export { setDragAndDrop };

@@ -16,5 +16,9 @@
       align-items: center;
       font-size: 25px; /* To size the Start and End icon */
     }
+
+    .wall {
+      background-color: $wall-background-color;
+    }
   }
 }

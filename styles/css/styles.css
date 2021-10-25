@@ -125,6 +125,10 @@
   /* To size the Start and End icon */
 }
 
+#grid-container #grid .wall {
+  background-color: black;
+}
+
 #legend-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -178,7 +182,7 @@
 }
 
 #legend-container #legend .legend-field #unexplored {
-  background-color: red;
+  background-color: white;
 }
 
 #legend-container #legend .legend-field #explored {
@@ -187,5 +191,56 @@
 
 #legend-container #legend .legend-field #best-path {
   background-color: yellow;
+}
+
+@-webkit-keyframes wall {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  75% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes wall {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  75% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+#grid .wall {
+  -webkit-animation: wall 0.3s ease-out;
+          animation: wall 0.3s ease-out;
 }
 /*# sourceMappingURL=styles.css.map */
