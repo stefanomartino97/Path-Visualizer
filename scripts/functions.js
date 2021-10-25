@@ -3,6 +3,13 @@ const parameters = {
     speed: 'medium'
 };
 
+function clear(...classes){
+    const cells = document.getElementsByClassName('cell');
+    for (let i = 0; i < cells.length; i++){
+        cells[i].classList.remove(...classes);
+    }
+}
+
 function addClicksToNavBar(){
     //Initialize active parameters
     document.getElementById(parameters.algorithm).classList.add('active');
@@ -32,6 +39,21 @@ function addClicksToNavBar(){
     const visualize = document.getElementById('visualize');
     visualize.onclick = () => {
         console.log(parameters);
+    }
+
+    const clearBoard = document.getElementById('clear-board');
+    clearBoard.onclick = () => {
+        clear("wall", "weights", "explored", "path");
+    }
+
+    const clearWallsAndWeights = document.getElementById('clear-walls-and-weights');
+    clearWallsAndWeights.onclick = () => {
+        clear("wall", "weights");
+    }
+
+    const clearPath = document.getElementById('clear-path');
+    clearPath.onclick = () => {
+        clear("explored", "path");
     }
     
 }
