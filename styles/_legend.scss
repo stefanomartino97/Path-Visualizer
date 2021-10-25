@@ -1,0 +1,45 @@
+@import "./variables";
+#legend-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+  #legend {
+    font-family: $font-family;
+    font-size: $legend-font-size;
+    display: flex;
+    flex-direction: row;
+
+    .legend-field {
+      margin: 0px 30px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .icon {
+        width: $legend-icon-width;
+        height: $legend-icon-height;
+        border: 1px solid $cell-border-color;
+      }
+
+      .description {
+        margin-left: 5px;
+      }
+
+      #wall {
+        background-color: $wall-background-color;
+      }
+
+      #unexplored {
+        background-color: $unexplored-background-color;
+      }
+
+      #explored {
+        background-color: $explored-background-color;
+      }
+
+      #best-path {
+        background-color: $best-path-background-color;
+      }
+    }
+  }
+}

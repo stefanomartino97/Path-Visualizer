@@ -6,3 +6,4 @@ createGrid();
 
 //Place Start and End icons
 placeStartAndEnd();
+
