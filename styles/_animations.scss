@@ -16,8 +16,30 @@
   }
 }
 
+@keyframes explored {
+  0% {
+    background-color: blue;
+  }
+  25% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: red;
+  }
+  75% {
+    background-color: black;
+  }
+  100% {
+    background-color: cyan;
+  }
+}
+
 #grid {
   .wall {
     animation: wall 0.3s ease-out;
+  }
+
+  .explored {
+    animation: explored 3s ease-out;
   }
 }

@@ -1,3 +1,5 @@
+import { findPath } from "./algorithms/main.js";
+
 const parameters = {
     algorithm: 'Dijkstra',
     speed: 'medium'
@@ -38,7 +40,8 @@ function addClicksToNavBar(){
 
     const visualize = document.getElementById('visualize');
     visualize.onclick = () => {
-        console.log(parameters);
+        const weight = document.getElementById('weight-range').value;
+        findPath(parameters.algorithm, parameters.speed, weight);
     }
 
     const clearBoard = document.getElementById('clear-board');

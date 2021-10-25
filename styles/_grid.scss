@@ -20,5 +20,13 @@
     .wall {
       background-color: $wall-background-color;
     }
+
+    .explored {
+      background-color: $explored-background-color;
+    }
+
+    .path {
+      background-color: $best-path-background-color;
+    }
   }
 }

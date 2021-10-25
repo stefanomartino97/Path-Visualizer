@@ -9,7 +9,7 @@ function createGrid(){
         for (let col = 0; col < COLUMNS; col++){
             const cell = document.createElement('div');
             cell.className = "cell";
-            cell.id = `row=${row}col=${col}`
+            cell.id = `${row}-${col}`
             grid.appendChild(cell);
         }
     }
@@ -22,8 +22,8 @@ function placeStartAndEnd(){
     const endNode = document.createElement('i');
     endNode.className = END_ICON_CLASS;   
 
-    const startCell = document.getElementById(`row=${START_ROW}col=${START_COLUMN}`);
-    const endCell = document.getElementById(`row=${END_ROW}col=${END_COLUMN}`);
+    const startCell = document.getElementById(`${START_ROW}-${START_COLUMN}`);
+    const endCell = document.getElementById(`${END_ROW}-${END_COLUMN}`);
 
     startCell.classList.add('start');
     endCell.classList.add('end');

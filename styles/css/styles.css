@@ -129,6 +129,14 @@
   background-color: black;
 }
 
+#grid-container #grid .explored {
+  background-color: cyan;
+}
+
+#grid-container #grid .path {
+  background-color: yellow;
+}
+
 #legend-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -281,8 +289,49 @@
   }
 }
 
+@-webkit-keyframes explored {
+  0% {
+    background-color: blue;
+  }
+  25% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: red;
+  }
+  75% {
+    background-color: black;
+  }
+  100% {
+    background-color: cyan;
+  }
+}
+
+@keyframes explored {
+  0% {
+    background-color: blue;
+  }
+  25% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: red;
+  }
+  75% {
+    background-color: black;
+  }
+  100% {
+    background-color: cyan;
+  }
+}
+
 #grid .wall {
   -webkit-animation: wall 0.3s ease-out;
           animation: wall 0.3s ease-out;
+}
+
+#grid .explored {
+  -webkit-animation: explored 3s ease-out;
+          animation: explored 3s ease-out;
 }
 /*# sourceMappingURL=styles.css.map */
