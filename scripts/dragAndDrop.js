@@ -49,7 +49,7 @@ function setStartAndEnd(){
     end.draggable(draggableOptions);
 }
 
-function setPaint(){
+function setPaintWall(){
     const cells = document.getElementsByClassName('cell');
     for (let i = 0; i < cells.length; i++){
         if (!cells[i].classList.contains('start') && !cells[i].classList.contains('end')){
@@ -75,7 +75,7 @@ function setPaint(){
 
 function setDragAndDrop(){
     setStartAndEnd();
-    setPaint();
+    setPaintWall();
 }
 
 export { setDragAndDrop };
