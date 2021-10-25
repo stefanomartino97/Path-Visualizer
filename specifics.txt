@@ -14,7 +14,7 @@
 # Functionalities:
     # Given Start and End, find best paths
     # Place walls
-    # Place bombs (places to avoid)
+    # Place bombs (second target)
     # Real Time change and computation of paths
     # Selection of algorithm 
     # Starting modal with tutorial

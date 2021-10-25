@@ -4,13 +4,11 @@
 
   #grid {
     display: grid;
-    background-color: red;
     grid-template-columns: repeat(45, $cell-width);
 
     .cell {
       height: $cell-height;
       width: $cell-width;
-      margin: 0px;
       background-color: white;
       border: 1px solid $cell-border-color;
       display: flex;

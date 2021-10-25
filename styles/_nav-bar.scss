@@ -51,7 +51,8 @@
     margin-left: 5px;
   }
 
-  .nav-bar-button:hover {
+  .nav-bar-button:hover,
+  #visualize {
     color: $nav-bar-button-color-hover;
     background-color: $nav-bar-backgound-color-hover;
     cursor: pointer;
