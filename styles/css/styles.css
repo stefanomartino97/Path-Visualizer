@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 #nav-bar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9,7 +16,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: black;
+  background-color: #232323;
   padding: 10px;
 }
 
@@ -28,7 +35,7 @@
 #nav-bar .dropdown .dropdown-menu {
   display: none;
   position: absolute;
-  background-color: black;
+  background-color: #232323;
   border-radius: 8px;
   padding: 5px 0px;
   width: 100%;
@@ -64,14 +71,44 @@
 
 #nav-bar .nav-bar-button:hover {
   color: white;
-  background-color: blue;
+  background-color: #005a69;
   cursor: pointer;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+#grid-container {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#grid-container #grid {
+  display: -ms-grid;
+  display: grid;
+  background-color: red;
+  -ms-grid-columns: (30px)[45];
+      grid-template-columns: repeat(45, 30px);
+}
+
+#grid-container #grid .cell {
+  height: 30px;
+  width: 30px;
+  margin: 0px;
+  background-color: white;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 25px;
+  /* To size the Start and End icon */
 }
 /*# sourceMappingURL=styles.css.map */

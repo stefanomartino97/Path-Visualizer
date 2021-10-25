@@ -2,7 +2,11 @@ $font-family: "Ubuntu", sans-serif;
 $logo-font-size: 24px;
 $logo-color: white;
 $nav-bar-font-size: 18px;
-$nav-bar-backgound-color: black;
-$nav-bar-backgound-color-hover: blue;
+$nav-bar-backgound-color: rgb(35, 35, 35);
+$nav-bar-backgound-color-hover: rgb(0, 90, 105);
 $nav-bar-button-color: white;
 $nav-bar-button-color-hover: white;
+
+$cell-width: 30px;
+$cell-height: 30px;
+$cell-border-color: rgba(128, 128, 128, 0.5);

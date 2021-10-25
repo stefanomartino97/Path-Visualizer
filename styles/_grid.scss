@@ -1,0 +1,23 @@
+#grid-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+
+  #grid {
+    display: grid;
+    background-color: red;
+    grid-template-columns: repeat(45, $cell-width);
+
+    .cell {
+      height: $cell-height;
+      width: $cell-width;
+      margin: 0px;
+      background-color: white;
+      border: 1px solid $cell-border-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 25px; /* To size the Start and End icon */
+    }
+  }
+}
