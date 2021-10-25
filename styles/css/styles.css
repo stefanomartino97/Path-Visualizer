@@ -166,6 +166,44 @@
   font-size: 20px;
 }
 
+#legend-container #legend .legend-field input {
+  margin: 0px 10px;
+}
+
+#legend-container #legend .legend-field input[type="range"] {
+  -webkit-appearance: none;
+}
+
+#legend-container #legend .legend-field input[type="range"]::-webkit-slider-runnable-track {
+  width: 300px;
+  height: 5px;
+  background: #ddd;
+  border: none;
+  border-radius: 3px;
+}
+
+#legend-container #legend .legend-field input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #232323;
+  margin-top: -4px;
+}
+
+#legend-container #legend .legend-field input[type="range"]:focus {
+  outline: none;
+}
+
+#legend-container #legend .legend-field input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #ccc;
+}
+
+#legend-container #legend .legend-field #current-weight {
+  width: 20px;
+}
+
 #legend-container #legend .legend-field .icon {
   width: 20px;
   height: 20px;

@@ -16,6 +16,44 @@
       align-items: center;
       font-size: 20px;
 
+      input {
+        margin: 0px 10px;
+      }
+
+      input[type="range"] {
+        -webkit-appearance: none;
+      }
+
+      input[type="range"]::-webkit-slider-runnable-track {
+        width: 300px;
+        height: 5px;
+        background: #ddd;
+        border: none;
+        border-radius: 3px;
+      }
+
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: none;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: $nav-bar-backgound-color;
+        margin-top: -4px;
+      }
+
+      input[type="range"]:focus {
+        outline: none;
+      }
+
+      input[type="range"]:focus::-webkit-slider-runnable-track {
+        background: #ccc;
+      }
+
+      #current-weight {
+        width: 20px;
+      }
+
       .icon {
         width: $legend-icon-width;
         height: $legend-icon-height;

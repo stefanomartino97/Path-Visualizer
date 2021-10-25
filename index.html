@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./styles/css/styles.css">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x icon" href="/favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="/favicon.ico?v=1.0" />
     
     <title>Path Visualizer</title>
 </head>
@@ -111,6 +111,12 @@
                 <div class="legend-field">
                     <i class="fas fa-weight-hanging"></i>
                     <div class="description">Weight</div>
+                </div>
+
+                <div class="legend-field">
+                    <div class="description">Set Weight</div>
+                    <input type="range" id="weight-range" min="1" max="20">
+                    <span id="current-weight">10</span>
                 </div>
             </div>
         </div>

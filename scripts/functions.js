@@ -56,6 +56,12 @@ function addClicksToNavBar(){
         clear("explored", "path");
     }
     
+    //Weight Range
+    document.getElementById('current-weight').innerHTML = document.getElementById('weight-range').value = 1;
+    document.getElementById('weight-range').oninput = () => {
+        document.getElementById('current-weight').innerHTML = document.getElementById('weight-range').value;
+    }
+
 }
 
 export { addClicksToNavBar };
