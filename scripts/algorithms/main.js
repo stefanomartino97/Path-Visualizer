@@ -1,5 +1,6 @@
 import { dijkstra } from './dijkstra.js';
 import { bfs } from './bfs.js';
+import { animate } from './utils.js';
 
 const speeds = {
     slow: 300,
@@ -36,13 +37,9 @@ function findPath(algorithm, speed, weight){
             func = bfs;
     }
 
-    const best_path = func(startRow, startColumn, endRow, endColumn, weight);
-    
-    let i = 0;
-    setInterval(() => {
-        document.getElementById(best_path[i]).classList.add('path');
-        i++;
-    }, speeds[speed]);
+    const [bestPath, exploredCells] = func(startRow, startColumn, endRow, endColumn, weight);
+    console.log(bestPath);
+    animate(exploredCells, bestPath, speeds[speed]);
     
 }
 

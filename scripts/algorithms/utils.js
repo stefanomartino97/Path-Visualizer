@@ -22,13 +22,17 @@ function findNeighbours(row, column){
     return neighbours;
 }
 
+function getIdFromCoordinates(row, column){
+    return `${row}-${column}`;
+}
+
 function traceback(cell){
     const result = [];
     let currentCell = cell;
 
     while (currentCell !== null){
         const [ currentRow, currentColumn ] = currentCell.data;
-        result.unshift((`${currentRow}-${currentColumn}`));
+        result.unshift(getIdFromCoordinates(currentRow, currentColumn));
         currentCell = currentCell.parent;
     }
 
@@ -42,6 +46,40 @@ class Node{
     }
 }
 
+function animate(exploredCells, bestPath, ms){
+    let i = 0;
+    const exploredInterval = setInterval(() => {
+        if (i >= exploredCells.length){
+            clearInterval(exploredInterval);
+            
+            let k = 0;
+            const pathInterval = setInterval(() => {
+                
+                if (k >= bestPath.length){
+                    clearInterval(pathInterval);
+                    return;
+                }
+
+                document.getElementById(bestPath[k]).classList.add('path');
+                k++;
+
+            }, ms);
+
+            return;
+
+
+        }
+
+        document.getElementById(exploredCells[i]).classList.add('explored');
+        i++;
+
+    }, ms);
+}
+
+
+
 export { findNeighbours };
 export { traceback };
 export { Node };
+export { getIdFromCoordinates };
+export { animate };
