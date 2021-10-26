@@ -47,20 +47,22 @@
   }
 }
 
-.visualize-animation {
-  animation: visualize 2s ease;
-  animation-iteration-count: infinite;
-}
-
 @keyframes path {
   0% {
     transform: scale(1.5);
     background-color: orange;
+    border: 1px solid $cell-border-color;
   }
+
   100% {
     transform: scale(1);
-    border: 1px solid grey;
+    border: 1px solid $cell-border-color;
   }
+}
+
+.visualize-animation {
+  animation: visualize 2s ease;
+  animation-iteration-count: infinite;
 }
 
 #grid {

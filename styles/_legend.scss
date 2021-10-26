@@ -44,6 +44,7 @@
 
       input[type="range"]:hover::-webkit-slider-thumb {
         background: $nav-bar-backgound-color-hover;
+        cursor: grab;
       }
 
       input[type="range"]:focus {
