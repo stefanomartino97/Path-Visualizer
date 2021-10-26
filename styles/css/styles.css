@@ -325,6 +325,37 @@
   }
 }
 
+@-webkit-keyframes visualize {
+  0% {
+    background-color: #dc6400;
+  }
+  33% {
+    background-color: red;
+  }
+  100% {
+    background-color: #dc6400;
+  }
+}
+
+@keyframes visualize {
+  0% {
+    background-color: #dc6400;
+  }
+  33% {
+    background-color: red;
+  }
+  100% {
+    background-color: #dc6400;
+  }
+}
+
+.visualize-animation {
+  -webkit-animation: visualize 2s ease;
+          animation: visualize 2s ease;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
 @-webkit-keyframes path {
   0% {
     -webkit-transform: scale(1.5);
@@ -334,6 +365,7 @@
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
+    border: 1px solid grey;
   }
 }
 
@@ -346,6 +378,7 @@
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
+    border: 1px solid grey;
   }
 }
 

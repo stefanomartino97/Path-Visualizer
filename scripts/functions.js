@@ -2,7 +2,7 @@ import { findPath } from "./algorithms/main.js";
 
 const parameters = {
     algorithm: 'Dijkstra',
-    speed: 'medium'
+    speed: 'fast'
 };
 
 function clear(...classes){

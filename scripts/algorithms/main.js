@@ -1,5 +1,6 @@
 import { dijkstra } from './dijkstra.js';
 import { bfs } from './bfs.js';
+import { dfs } from './dfs.js';
 import { animate } from './utils.js';
 
 const speeds = {
@@ -27,20 +28,27 @@ function getStartAndEnd(){
 }
 
 function findPath(algorithm, speed, weight){
+    //Start visualize animation
+    const visualize = document.getElementById('visualize');
+    visualize.classList.add('visualize-animation');
+    
+
     const [ startRow, startColumn, endRow, endColumn ] = getStartAndEnd();
-    let func = bfs;
+    let func = '';
+    
     switch(algorithm){
-        case 'bfs':
+        case 'BFS':
             func = bfs;
+            break;
+        case 'DFS':
+            func = dfs;
             break;
         default:
             func = bfs;
     }
 
     const [bestPath, exploredCells] = func(startRow, startColumn, endRow, endColumn, weight);
-    console.log(bestPath);
     animate(exploredCells, bestPath, speeds[speed]);
-    
 }
 
 export { findPath };

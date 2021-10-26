@@ -57,6 +57,7 @@ function animate(exploredCells, bestPath, ms){
                 
                 if (k >= bestPath.length){
                     clearInterval(pathInterval);
+                    document.getElementById('visualize').classList.remove('visualize-animation');
                     return;
                 }
 
