@@ -18,19 +18,28 @@
 
 @keyframes explored {
   0% {
-    background-color: blue;
-  }
-  25% {
-    background-color: yellow;
-  }
-  50% {
-    background-color: red;
-  }
-  75% {
     background-color: black;
+    transform: scale(0.2);
+    border-radius: 100%;
+  }
+
+  50% {
+    background-color: blue;
+    transform: scale(0.5);
+    border-radius: 100%;
   }
   100% {
-    background-color: cyan;
+    background-color: $explored-background-color;
+  }
+}
+
+@keyframes path {
+  0% {
+    transform: scale(1.5);
+    background-color: orange;
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
@@ -40,6 +49,10 @@
   }
 
   .explored {
-    animation: explored 3s ease-out;
+    animation: explored 1s ease;
+  }
+
+  .path {
+    animation: path 1s ease;
   }
 }
