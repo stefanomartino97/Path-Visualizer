@@ -9,8 +9,10 @@
     # Create Grid --
     # Create Algorithms
     # Create animations --
-    # Create drag and drop
+    # Create drag and drop --
     # Maze (?)
+    # Weight
+    # Modal
 
 # Functionalities:
     # Given Start and End, find best paths

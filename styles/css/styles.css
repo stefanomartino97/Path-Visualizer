@@ -137,6 +137,19 @@
   background-color: yellow;
 }
 
+#grid-container #grid .start,
+#grid-container #grid .end {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+#grid-container #grid .start:active,
+#grid-container #grid .end:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
 #legend-container {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -28,5 +28,15 @@
     .path {
       background-color: $best-path-background-color;
     }
+
+    .start,
+    .end {
+      cursor: move;
+      cursor: grab;
+
+      &:active {
+        cursor: grabbing;
+      }
+    }
   }
 }
