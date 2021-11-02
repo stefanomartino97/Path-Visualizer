@@ -8,8 +8,9 @@
     # Create NavBar --
     # Create Grid --
     # Create Algorithms
-    # Create animations
+    # Create animations --
     # Create drag and drop
+    # Maze (?)
 
 # Functionalities:
     # Given Start and End, find best paths

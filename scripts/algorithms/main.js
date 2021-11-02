@@ -29,6 +29,7 @@ function getStartAndEnd(){
 
 function findPath(algorithm, speed, weight){
     //Start visualize animation
+    console.log(algorithm);
     const visualize = document.getElementById('visualize');
     visualize.classList.add('visualize-animation');
     
@@ -43,11 +44,14 @@ function findPath(algorithm, speed, weight){
         case 'DFS':
             func = dfs;
             break;
+        case 'Dijkstra':
+            func = dijkstra;
+            break;
         default:
             func = bfs;
     }
 
-    const [bestPath, exploredCells] = func(startRow, startColumn, endRow, endColumn, weight);
+    const [bestPath, exploredCells] = func(startRow, startColumn, endRow, endColumn, 10); //todo change 10 with weight
     animate(exploredCells, bestPath, speeds[speed]);
 }
 

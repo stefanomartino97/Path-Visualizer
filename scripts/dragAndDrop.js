@@ -1,3 +1,5 @@
+let canPaintWall = false;
+console.log('new');
 const draggableOptions = {
         containment: '#grid',
         cursor: 'grab',
@@ -9,74 +11,82 @@ const droppableOptions = {
     drop: handleDrop
 };
 
-let canPaintWall = false;
-
 function handleDrop(event, ui){
-    const draggableClass = ui.draggable[0].classList;
-    const _class = draggableClass.contains('start') ? 'start' : 'end';
+    const draggedElement = ui.draggable;
+    const currentElement = $(`[id="${event.target.id}"]`);
+    console.log(draggedElement);
+    console.log(currentElement);
+    const _class = draggedElement.hasClass('start') ? 'start' : 'end';
+
+    disableDraggable(draggedElement);
+    setDroppable(draggedElement);
+    draggedElement.removeClass(_class);
+    setPaintable(document.getElementById(draggedElement.attr('id')));
     
-    ui.draggable.draggable("disable");
-    ui.draggable.droppable("enable");
-    ui.draggable.droppable(droppableOptions);
-    ui.draggable.removeClass(_class);
-    
-    const currentElementId = event.target.id;
-    
-    $(`[id="${currentElementId}"]`).draggable(draggableOptions);
-    
-    $(`[id="${currentElementId}"]`).droppable('disable');
-    $(`[id="${currentElementId}"]`).addClass(_class);
-    
-    const icon = ui.draggable[0].childNodes[0];
-    document.getElementById(currentElementId).appendChild(icon);
-    setPaintWall();
-    
+    disablePaintable(document.getElementById(currentElement.attr('id')));
+    setDraggable(currentElement);
+    disableDroppable(currentElement);
+    currentElement.addClass(_class);
+
+    const icon = draggedElement[0].childNodes[0];
+    document.getElementById(event.target.id).appendChild(icon);
 }
 
-//Deal Drag&Drop of Start and End cells
-function setStartAndEnd(){
-    const cells = $('.cell');
-    cells.droppable(droppableOptions);
-
-    const start = $('.start');
-    const end = $('.end');
-
-    start.droppable('disable');
-   
-    end.droppable('disable');
-    
-    
-    start.draggable(draggableOptions);
-    end.draggable(draggableOptions);
+function setDraggable(element){
+    element.draggable(draggableOptions);
 }
 
-function setPaintWall(){
-    const cells = document.getElementsByClassName('cell');
-    for (let i = 0; i < cells.length; i++){
-        if (!cells[i].classList.contains('start') && !cells[i].classList.contains('end') && !cells[i].classList.contains('wall')){
+function disableDraggable(element){
+    console.log('dra', element);
+    element.draggable('disable');
+}
 
-            cells[i].onmousedown = () => {
-                cells[i].classList.add('wall');
-                canPaintWall = true;
-            }
+function setDroppable(element){
+    element.droppable(droppableOptions);
+}
 
-            cells[i].onmouseover = () => {
-                if (canPaintWall){
-                     cells[i].classList.add('wall');
-                }
-            }
+function disableDroppable(element){
+    element.droppable('disable');
+}
 
-            cells[i].onmouseup = (event) => {
-                canPaintWall = false;
-                
-            }
+function setPaintable(element){
+    element.onmousedown = () => {
+        element.classList.add('wall');
+        canPaintWall = true;
+    }
+
+    element.onmouseover = () => {
+        if (canPaintWall){
+            element.classList.add('wall');
         }
+    }
+
+    element.onmouseup = () => {
+        canPaintWall = false;
     }
 }
 
+function disablePaintable(element){
+    element.onmousedown = () => {}
+
+    element.onmouseover = () => {}
+
+    element.onmouseup = () => {}
+}
+
 function setDragAndDrop(){
-    setStartAndEnd();
-    setPaintWall();
+    //Set all cells paintable and droppable, except for start end end (not paintable and draggable)
+    const cells = $('.cell');
+    cells.each(function (){
+        const element = document.getElementById($(this).attr('id'));
+        if ($(this).hasClass('start') || $(this).hasClass('end')){
+            disablePaintable(element);
+            setDraggable($(this));
+        } else {
+            setDroppable($(this));
+            setPaintable(element);
+        }
+    });
 }
 
 export { setDragAndDrop };

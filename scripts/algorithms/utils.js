@@ -26,6 +26,11 @@ function getIdFromCoordinates(row, column){
     return `${row}-${column}`;
 }
 
+function getCoodinatesFromId(id){
+    let [row, col] = id.split('-');
+    return [parseInt(row), parseInt(col)];
+}   
+
 function traceback(cell){
     const result = [];
     let currentCell = cell;
@@ -48,6 +53,7 @@ class Node{
 
 function animate(exploredCells, bestPath, ms){
     let i = 0;
+    console.log('best path', bestPath);
     const exploredInterval = setInterval(() => {
         if (i >= exploredCells.length){
             clearInterval(exploredInterval);
@@ -60,7 +66,7 @@ function animate(exploredCells, bestPath, ms){
                     document.getElementById('visualize').classList.remove('visualize-animation');
                     return;
                 }
-
+                
                 document.getElementById(bestPath[k]).classList.add('path');
                 k++;
 
@@ -82,5 +88,5 @@ function animate(exploredCells, bestPath, ms){
 export { findNeighbours };
 export { traceback };
 export { Node };
-export { getIdFromCoordinates };
+export { getIdFromCoordinates, getCoodinatesFromId };
 export { animate };
