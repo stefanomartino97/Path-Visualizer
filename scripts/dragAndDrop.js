@@ -1,4 +1,6 @@
 let canPaintWall = false;
+let canPaintWeight = false;
+let isPaintingWeight = false;
 
 const draggableOptions = {
   containment: "#grid",
@@ -50,19 +52,32 @@ function disableDroppable(element) {
 }
 
 function setPaintable(element) {
+  const weight = document.createElement("i");
+  weight.className = "fas fa-weight-hanging";
+
   element.onmousedown = () => {
-    element.classList.add("wall");
-    canPaintWall = true;
+    if (canPaintWeight) {
+      isPaintingWeight = true;
+      element.classList.add("weight");
+      element.appendChild(weight);
+    } else {
+      element.classList.add("wall");
+      canPaintWall = true;
+    }
   };
 
   element.onmouseover = () => {
-    if (canPaintWall) {
+    if (isPaintingWeight) {
+      element.classList.add("weight");
+      element.appendChild(weight);
+    } else if (canPaintWall) {
       element.classList.add("wall");
     }
   };
 
   element.onmouseup = () => {
     canPaintWall = false;
+    isPaintingWeight = false;
   };
 }
 
@@ -87,6 +102,20 @@ function setDragAndDrop() {
       setPaintable(element);
     }
   });
+
+  const body = document.getElementsByTagName("body")[0];
+  //Todo: create a popup
+  body.onkeydown = function (e) {
+    if (e.keyCode === 87) {
+      canPaintWeight = true;
+      $("#outer-weight-popup").fadeIn();
+    }
+  };
+
+  body.onkeyup = function (e) {
+    canPaintWeight = false;
+    $("#outer-weight-popup").fadeOut();
+  };
 }
 
 export { setDragAndDrop };

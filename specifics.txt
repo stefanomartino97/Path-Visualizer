@@ -13,6 +13,7 @@
     # Maze (?)
     # Weight
     # Modal
+    # Grabbing while dragging, visivamente impossibile draggare su wall
 
 # Functionalities:
     # Given Start and End, find best paths

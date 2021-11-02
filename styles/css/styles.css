@@ -413,4 +413,36 @@
   -webkit-animation: path 1s ease;
           animation: path 1s ease;
 }
+
+#outer-weight-popup {
+  display: none;
+}
+
+#outer-weight-popup #weight-popup {
+  background-color: #dc6400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Ubuntu", cursive;
+  font-size: 24px;
+  padding: 8px;
+  width: 400px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  border-radius: 8px;
+  right: 10px;
+}
+
+#outer-weight-popup #weight-popup i {
+  margin: 0px 10px;
+}
 /*# sourceMappingURL=styles.css.map */
