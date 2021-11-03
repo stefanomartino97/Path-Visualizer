@@ -28,7 +28,6 @@ function getStartAndEnd() {
 
 function findPath(algorithm, speed, weight) {
   //Start visualize animation
-  console.log(algorithm);
   const visualize = document.getElementById("visualize");
   visualize.classList.add("visualize-animation");
 

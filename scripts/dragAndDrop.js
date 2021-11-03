@@ -39,7 +39,6 @@ function setDraggable(element) {
 }
 
 function disableDraggable(element) {
-  console.log("dra", element);
   element.draggable("disable");
 }
 

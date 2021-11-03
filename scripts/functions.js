@@ -1,4 +1,5 @@
 import { findPath } from "./algorithms/main.js";
+let currentModal = 0;
 
 const parameters = {
   algorithm: "Dijkstra",
@@ -10,6 +11,31 @@ function clear(...classes) {
   for (let i = 0; i < cells.length; i++) {
     cells[i].classList.remove(...classes);
   }
+}
+
+function modal() {
+  document.getElementById("close").onclick = function () {
+    $("#modal").fadeOut();
+  };
+
+  const modalPages = $(".outer-modal-page");
+  modalPages.eq(0).fadeIn();
+
+  document.getElementById("next-button").onclick = function () {
+    const oldModal = currentModal;
+    currentModal = (currentModal + 1) % modalPages.length;
+    modalPages.eq(oldModal).fadeOut(() => {
+      modalPages.eq(currentModal).fadeIn();
+    });
+  };
+
+  document.getElementById("previous-button").onclick = function () {
+    const oldModal = currentModal;
+    currentModal = (currentModal - 1) % modalPages.length;
+    modalPages.eq(oldModal).fadeOut(() => {
+      modalPages.eq(currentModal).fadeIn();
+    });
+  };
 }
 
 function addClicksToNavBar() {
@@ -77,6 +103,8 @@ function addClicksToNavBar() {
     document.getElementById("current-weight").innerHTML =
       document.getElementById("weight-range").value;
   };
+
+  modal();
 }
 
 export { addClicksToNavBar };

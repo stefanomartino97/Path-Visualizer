@@ -1,141 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Ubuntu from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/b26fe5b7af.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/b26fe5b7af.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- My Stylesheet -->
-    <link rel="stylesheet" href="./styles/css/styles.css">
+    <link rel="stylesheet" href="./styles/css/styles.css" />
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="/favicon.png" />
-    
+
     <title>Path Visualizer</title>
-</head>
-<body>
-    <div id="outer-container">
-        <nav id="nav-bar">
-            <div id="logo">Path visualizer</div>
-            <!-- Algorithms -->
-            <div class="dropdown">
-                <div class="dropdown-content">
-                    <div class="nav-bar-button">Algorithm <i class="fas fa-angle-down"></i></div>
-                </div>
-                <div class="dropdown-menu">
-                    <div class="nav-bar-button algorithm" id="Dijkstra">Dijkstra</div>
-                    <div class="nav-bar-button algorithm" id="A*">A* Search</div>
-                    <div class="nav-bar-button algorithm" id="DFS">DFS</div>
-                    <div class="nav-bar-button algorithm" id="BFS">BFS</div>
-                </div>
-            </div>
-
-            <!-- Mazes & Patterns -->
-            <div class="dropdown">
-                <div class="dropdown-content">
-                    <div class="nav-bar-button">Mazes & Patterns <i class="fas fa-angle-down"></i> </div>
-                    
-                </div>
-                <div class="dropdown-menu">
-                    <div class="nav-bar-button">Maze 1</div>
-                    <div class="nav-bar-button">Maze 2</div>
-                </div>
-            </div>
-
-            <!-- Visualize -->
-            <div class="nav-bar-button" id="visualize">Visualize&nbsp;<span id="algorithm-name"></span></div>
-
-            <!-- Clear Board -->
-            <div class="nav-bar-button" id="clear-board">Clear Board</div>
-
-            <!-- Clear Walls & Weights -->
-            <div class="nav-bar-button" id="clear-walls-and-weights">Clear Walls & Weights</div>
-
-            <!-- Clear Path -->
-            <div class="nav-bar-button" id="clear-path">Clear Path</div>
-
-            <!-- Speed -->
-            <div class="dropdown">
-                <div class="dropdown-content">
-                    <div class="nav-bar-button">Speed <i class="fas fa-angle-down"></i></div>
-                </div>
-                <div class="dropdown-menu">
-                    <div class="nav-bar-button speed" id="slow">Slow</div>
-                    <div class="nav-bar-button speed" id="medium">Medium</div>
-                    <div class="nav-bar-button speed" id="fast">Fast</div>
-                </div>
-            </div>
-
-        </nav>
-        <div id="legend-container">
-            <div id="legend">
-
-                <div class="legend-field">
-                    <div class="icon" id="wall"></div>
-                    <div class="description">Wall</div>
-                </div>
-
-                <div class="legend-field">
-                    <div class="icon" id="unexplored"></div>
-                    <div class="description">Unexplored</div>
-                </div>
-
-                <div class="legend-field">
-                    <div class="icon" id="explored"></div>
-                    <div class="description">Explored</div>
-                </div>
-
-                <div class="legend-field">
-                    <div class="icon" id="best-path"></div>
-                    <div class="description">Best Path</div>
-                </div>
-
-                <div class="legend-field">
-                    <i class="fas fa-car"></i>
-                    <div class="description">Start</div>
-                </div>
-
-                <div class="legend-field">
-                    <i class="fas fa-flag-checkered"></i>
-                    <div class="description">End</div>
-                </div>
-
-                <div class="legend-field">
-                    <i class="fas fa-weight-hanging"></i>
-                    <div class="description">Weight</div>
-                </div>
-
-                <div class="legend-field">
-                    <div class="description">Set Weight</div>
-                    <input type="range" id="weight-range" min="1" max="20">
-                    <span id="current-weight">10</span>
-                </div>
-            </div>
+  </head>
+  <body>
+    <div id="modal">
+      <div id="modal-content">
+        <div id="close">&times;</div>
+        <div class="outer-modal-page">
+          <div class="modal-page">
+            <div class="modal-text">Drag the mouse to add walls</div>
+            <img src="./images/drag walls.JPG" alt="" />
+          </div>
         </div>
-        <div id="grid-container">
-            <div id="grid"></div>
-        </div>
-        <div id="outer-weight-popup">
-            <div id="weight-popup">
-                <i class="fas fa-weight-hanging"></i>
-                <p>Weight Mode activated</p>
+        <div class="outer-modal-page">
+          <div class="modal-page">
+            <div class="modal-text">
+              Press <b>&nbsp;W&nbsp;</b> and drag the mouse to add weights
             </div>
+            <img src="./images/drag weights.JPG" alt="" />
+          </div>
         </div>
+        <div class="outer-modal-page">
+          <div class="modal-page">
+            <div class="modal-text">
+              Choose your favorite path finding algorithm
+            </div>
+            <img src="./images/algorithm.JPG" alt="" />
+          </div>
+        </div>
+        <div class="outer-modal-page">
+          <div class="modal-page">
+            <div class="modal-text">Click Visualize!</div>
+            <img src="./images/visualize.JPG" alt="" />
+          </div>
+        </div>
+
+        <div id="modal-buttons">
+          <div class="modal-button" id="previous-button">
+            <i class="fas fa-angle-left"></i> Previous Tip
+          </div>
+          <div class="modal-button" id="next-button">
+            Next Tip<i class="fas fa-angle-right"></i>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="./scripts/script.js" type="module" ></script>
+    <div id="outer-container">
+      <nav id="nav-bar">
+        <div id="logo">Path visualizer</div>
+        <!-- Algorithms -->
+        <div class="dropdown">
+          <div class="dropdown-content">
+            <div class="nav-bar-button">
+              Algorithm <i class="fas fa-angle-down"></i>
+            </div>
+          </div>
+          <div class="dropdown-menu">
+            <div class="nav-bar-button algorithm" id="Dijkstra">Dijkstra</div>
+            <div class="nav-bar-button algorithm" id="A*">A* Search</div>
+            <div class="nav-bar-button algorithm" id="DFS">DFS</div>
+            <div class="nav-bar-button algorithm" id="BFS">BFS</div>
+          </div>
+        </div>
+
+        <!-- Mazes & Patterns -->
+        <div class="dropdown">
+          <div class="dropdown-content">
+            <div class="nav-bar-button">
+              Mazes & Patterns <i class="fas fa-angle-down"></i>
+            </div>
+          </div>
+          <div class="dropdown-menu">
+            <div class="nav-bar-button">Maze 1</div>
+            <div class="nav-bar-button">Maze 2</div>
+          </div>
+        </div>
+
+        <!-- Visualize -->
+        <div class="nav-bar-button" id="visualize">
+          Visualize&nbsp;<span id="algorithm-name"></span>
+        </div>
+
+        <!-- Clear Board -->
+        <div class="nav-bar-button" id="clear-board">Clear Board</div>
+
+        <!-- Clear Walls & Weights -->
+        <div class="nav-bar-button" id="clear-walls-and-weights">
+          Clear Walls & Weights
+        </div>
+
+        <!-- Clear Path -->
+        <div class="nav-bar-button" id="clear-path">Clear Path</div>
+
+        <!-- Speed -->
+        <div class="dropdown">
+          <div class="dropdown-content">
+            <div class="nav-bar-button">
+              Speed <i class="fas fa-angle-down"></i>
+            </div>
+          </div>
+          <div class="dropdown-menu">
+            <div class="nav-bar-button speed" id="slow">Slow</div>
+            <div class="nav-bar-button speed" id="medium">Medium</div>
+            <div class="nav-bar-button speed" id="fast">Fast</div>
+          </div>
+        </div>
+      </nav>
+      <div id="legend-container">
+        <div id="legend">
+          <div class="legend-field">
+            <div class="icon" id="wall"></div>
+            <div class="description">Wall</div>
+          </div>
+
+          <div class="legend-field">
+            <div class="icon" id="unexplored"></div>
+            <div class="description">Unexplored</div>
+          </div>
+
+          <div class="legend-field">
+            <div class="icon" id="explored"></div>
+            <div class="description">Explored</div>
+          </div>
+
+          <div class="legend-field">
+            <div class="icon" id="best-path"></div>
+            <div class="description">Best Path</div>
+          </div>
+
+          <div class="legend-field">
+            <i class="fas fa-car"></i>
+            <div class="description">Start</div>
+          </div>
+
+          <div class="legend-field">
+            <i class="fas fa-flag-checkered"></i>
+            <div class="description">End</div>
+          </div>
+
+          <div class="legend-field">
+            <i class="fas fa-weight-hanging"></i>
+            <div class="description">Weight</div>
+          </div>
+
+          <div class="legend-field">
+            <div class="description">Set Weight</div>
+            <input type="range" id="weight-range" min="1" max="20" />
+            <span id="current-weight">10</span>
+          </div>
+        </div>
+      </div>
+      <div id="grid-container">
+        <div id="grid"></div>
+      </div>
+      <div id="outer-weight-popup">
+        <div id="weight-popup">
+          <i class="fas fa-weight-hanging"></i>
+          <p>Weight Mode activated</p>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/script.js" type="module"></script>
 
     <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+      integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

@@ -1,89 +1,83 @@
-import { ROWS, COLUMNS } from '../constants.js';
+import { ROWS, COLUMNS } from "../constants.js";
 
-function findNeighbours(row, column){
-    const neighbours = [];
+function findNeighbours(row, column) {
+  const neighbours = [];
 
-    if (row !== 0){
-        neighbours.push([row-1, column])
-    }
+  if (row !== 0) {
+    neighbours.push([row - 1, column]);
+  }
 
-    if (row !== ROWS - 1){
-        neighbours.push([row+1, column]);
-    }
+  if (row !== ROWS - 1) {
+    neighbours.push([row + 1, column]);
+  }
 
-    if (column !== 0){
-        neighbours.push([row, column-1]);
-    }
+  if (column !== 0) {
+    neighbours.push([row, column - 1]);
+  }
 
-    if (column !== COLUMNS - 1){
-        neighbours.push([row, column+1]);
-    }
+  if (column !== COLUMNS - 1) {
+    neighbours.push([row, column + 1]);
+  }
 
-    return neighbours;
+  return neighbours;
 }
 
-function getIdFromCoordinates(row, column){
-    return `${row}-${column}`;
+function getIdFromCoordinates(row, column) {
+  return `${row}-${column}`;
 }
 
-function getCoodinatesFromId(id){
-    let [row, col] = id.split('-');
-    return [parseInt(row), parseInt(col)];
-}   
-
-function traceback(cell){
-    const result = [];
-    let currentCell = cell;
-
-    while (currentCell !== null){
-        const [ currentRow, currentColumn ] = currentCell.data;
-        result.unshift(getIdFromCoordinates(currentRow, currentColumn));
-        currentCell = currentCell.parent;
-    }
-
-    return result;
+function getCoodinatesFromId(id) {
+  let [row, col] = id.split("-");
+  return [parseInt(row), parseInt(col)];
 }
 
-class Node{
-    constructor(data, parent){
-        this.data = data;
-        this.parent = parent;
-    }
+function traceback(cell) {
+  const result = [];
+  let currentCell = cell;
+
+  while (currentCell !== null) {
+    const [currentRow, currentColumn] = currentCell.data;
+    result.unshift(getIdFromCoordinates(currentRow, currentColumn));
+    currentCell = currentCell.parent;
+  }
+
+  return result;
 }
 
-function animate(exploredCells, bestPath, ms){
-    let i = 0;
-    console.log('best path', bestPath);
-    const exploredInterval = setInterval(() => {
-        if (i >= exploredCells.length){
-            clearInterval(exploredInterval);
-            
-            let k = 0;
-            const pathInterval = setInterval(() => {
-                
-                if (k >= bestPath.length){
-                    clearInterval(pathInterval);
-                    document.getElementById('visualize').classList.remove('visualize-animation');
-                    return;
-                }
-                
-                document.getElementById(bestPath[k]).classList.add('path');
-                k++;
+class Node {
+  constructor(data, parent) {
+    this.data = data;
+    this.parent = parent;
+  }
+}
 
-            }, ms);
+function animate(exploredCells, bestPath, ms) {
+  let i = 0;
+  const exploredInterval = setInterval(() => {
+    if (i >= exploredCells.length) {
+      clearInterval(exploredInterval);
 
-            return;
-
-
+      let k = 0;
+      const pathInterval = setInterval(() => {
+        if (k >= bestPath.length) {
+          clearInterval(pathInterval);
+          document
+            .getElementById("visualize")
+            .classList.remove("visualize-animation");
+          return;
         }
 
-        document.getElementById(exploredCells[i]).classList.add('explored');
-        i++;
+        document.getElementById(bestPath[k]).classList.add("path");
+        k++;
+      }, ms);
 
-    }, ms);
+      return;
+    }
+
+    document.getElementById(exploredCells[i]).classList.add("explored");
+    i++;
+  }, ms);
 }
-
-
 
 export { findNeighbours };
 export { traceback };
