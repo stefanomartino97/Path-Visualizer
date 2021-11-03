@@ -3,15 +3,9 @@
 <img src="https://i.imgur.com/wh6P57K.jpg"/>
 <div>Powered by:</div>
 <ul>
-  <li>HTML</li>
+  <li>HTML <img src="https://cdn.iconscout.com/icon/free/png-256/html-59-225995.png"/> </li>
   <li>CSS</li>
   <li>JavaScript</li>
   <li>jQuery</li>
   <li>jQuery UI</li>
 </ul>
-
-<style>
-  p{
-    font-size: 32px;
-  }
-</style>
