@@ -1,6 +1,6 @@
 <h1>Path Visualizer</h1>
 <p>A visual implementation of various algorithms to find the best path between two points in a grid</p>
-<p>The alggorithms include:</p>
+<p>The algorithms include:</p>
 <ul>
   <li>Dijkstra</li>
   <li>A* Search</li>
