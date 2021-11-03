@@ -1,2 +1,11 @@
 <h1>Path Visualizer</h1>
-<p style="color=red">HTML, CSS, JavaScript and jQuery based visual algorithm to find the best path between two points in a grid</p>
+<p>A visual algorithm to find the best path between two points in a grid</p>
+<div>Powered by:</div>
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+  <li>jQuery</li>
+  <li>jQuery UI</li>
+</ul>
+
