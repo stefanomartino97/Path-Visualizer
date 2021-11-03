@@ -24,6 +24,14 @@ function modal() {
   document.getElementById("next-button").onclick = function () {
     const oldModal = currentModal;
     currentModal = (currentModal + 1) % modalPages.length;
+
+    if (currentModal !== 0) {
+      document.getElementById("previous-button").classList.remove("disabled");
+    }
+
+    if (currentModal === modalPages.length - 1) {
+      document.getElementById("next-button").classList.add("disabled");
+    }
     modalPages.eq(oldModal).fadeOut(() => {
       modalPages.eq(currentModal).fadeIn();
     });
@@ -32,6 +40,15 @@ function modal() {
   document.getElementById("previous-button").onclick = function () {
     const oldModal = currentModal;
     currentModal = (currentModal - 1) % modalPages.length;
+
+    if (currentModal == 0) {
+      document.getElementById("previous-button").classList.add("disabled");
+    }
+
+    if (currentModal < modalPages.length - 1) {
+      document.getElementById("next-button").classList.remove("disabled");
+    }
+
     modalPages.eq(oldModal).fadeOut(() => {
       modalPages.eq(currentModal).fadeIn();
     });

@@ -532,6 +532,11 @@
   bottom: 10px;
 }
 
+#modal #modal-content #modal-buttons .disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
 #modal #modal-content #modal-buttons .modal-button {
   background-color: #232323;
   color: white;

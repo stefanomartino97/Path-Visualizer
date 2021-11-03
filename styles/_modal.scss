@@ -58,6 +58,11 @@
       position: absolute;
       bottom: 10px;
 
+      .disabled {
+        pointer-events: none;
+        opacity: 0.6;
+      }
+
       .modal-button {
         background-color: rgb(35, 35, 35);
         color: white;
