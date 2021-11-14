@@ -12,7 +12,7 @@
     # Create drag and drop --
     # Maze (?)
     # Weight --
-    # Modal
+    # Modal --
     # Grabbing while dragging, visivamente impossibile draggare su wall
 
 # Functionalities:

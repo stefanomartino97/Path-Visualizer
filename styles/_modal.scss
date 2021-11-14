@@ -11,11 +11,13 @@
   font-size: 32px;
 
   #modal-content {
+    //background: linear-gradient(white, grey, white);
     background-color: white;
     box-shadow: 10px 10px 10px rgba(35, 35, 35, 0.8);
-    width: 800px;
+    width: 900px;
     height: 700px;
-
+    border-radius: 8px;
+    border-top-right-radius: 20px;
     position: relative;
     padding: 20px;
     .outer-modal-page {
@@ -84,7 +86,7 @@
     #close {
       position: absolute;
       top: -20px;
-      right: 4px;
+      right: 5px;
       transition: 0.5s;
       //background-color: blue;
       //height: 70px;

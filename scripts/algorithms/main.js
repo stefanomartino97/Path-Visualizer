@@ -1,4 +1,5 @@
 import { dijkstra } from "./dijkstra.js";
+import { a_star_search } from "./a_star_search.js";
 import { bfs } from "./bfs.js";
 import { dfs } from "./dfs.js";
 import { animate } from "./utils.js";
@@ -35,6 +36,10 @@ function findPath(algorithm, speed, weight) {
   let func = "";
 
   switch (algorithm) {
+    case "A*":
+      func = a_star_search;
+      console.log("ecco");
+      break;
     case "BFS":
       func = bfs;
       break;

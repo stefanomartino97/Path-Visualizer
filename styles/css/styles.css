@@ -470,8 +470,10 @@
   background-color: white;
   -webkit-box-shadow: 10px 10px 10px rgba(35, 35, 35, 0.8);
           box-shadow: 10px 10px 10px rgba(35, 35, 35, 0.8);
-  width: 800px;
+  width: 900px;
   height: 700px;
+  border-radius: 8px;
+  border-top-right-radius: 20px;
   position: relative;
   padding: 20px;
 }
@@ -568,7 +570,7 @@
 #modal #modal-content #close {
   position: absolute;
   top: -20px;
-  right: 4px;
+  right: 5px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   display: block;
