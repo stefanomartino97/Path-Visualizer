@@ -112,7 +112,6 @@ function a_star_search(startRow, startColumn, endRow, endColumn, weight) {
   const exploredList = [];
 
   while (frontier.length) {
-    console.log(frontier.toString());
     const currentNode = frontier.pop();
 
     if (currentNode.row === endRow && currentNode.col === endColumn) {

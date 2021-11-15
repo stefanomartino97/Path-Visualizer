@@ -33,12 +33,14 @@ function displayStats(algorithm, bestPath, exploredCells, weight) {
     stats = `<b>&nbsp;${algorithm}&nbsp;</b> couldn't find a best path`;
   } else {
     let totalCost = 0;
+    bestPath = [...new Set(bestPath)];
+    exploredCells = [...new Set(exploredCells)];
     for (const id of bestPath)
       totalCost += document.getElementById(id).classList.contains("weight")
         ? weight
         : 1;
 
-    const stats = `<b>&nbsp;${algorithm}&nbsp;</b> explored <b>&nbsp;${exploredCells.length}&nbsp;</b> cells. Best path cost: <b>&nbsp;${totalCost}&nbsp;</b>`;
+    stats = `<b>&nbsp;${algorithm}&nbsp;</b> explored <b>&nbsp;${exploredCells.length}&nbsp;</b> cells. Best path cost: <b>&nbsp;${totalCost}&nbsp;</b>`;
   }
 
   $("#stats-popup").html(stats);
@@ -59,7 +61,7 @@ function findPath(algorithm, speed, weight) {
   switch (algorithm) {
     case "A*":
       func = a_star_search;
-      console.log("ecco");
+
       break;
     case "BFS":
       func = bfs;
