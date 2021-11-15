@@ -1,6 +1,6 @@
 # Todo
     # Maze
-    # After each algorithm, print number of explored cells and total costs
+    # After each algorithm, print number of explored cells and total costs--
     # Deal with impossible paths
 
 

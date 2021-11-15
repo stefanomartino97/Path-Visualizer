@@ -153,6 +153,8 @@ function a_star_search(startRow, startColumn, endRow, endColumn, weight) {
       }
     }
   }
+
+  return [[], exploredList];
 }
 
 export { a_star_search };

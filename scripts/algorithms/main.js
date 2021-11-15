@@ -28,13 +28,19 @@ function getStartAndEnd() {
 }
 
 function displayStats(algorithm, bestPath, exploredCells, weight) {
-  let totalCost = 0;
-  for (const id of bestPath)
-    totalCost += document.getElementById(id).classList.contains("weight")
-      ? weight
-      : 1;
+  let stats = "";
+  if (bestPath.length === 0) {
+    stats = `<b>&nbsp;${algorithm}&nbsp;</b> couldn't find a best path`;
+  } else {
+    let totalCost = 0;
+    for (const id of bestPath)
+      totalCost += document.getElementById(id).classList.contains("weight")
+        ? weight
+        : 1;
 
-  const stats = `${algorithm} explored <b>&nbsp;${exploredCells.length}&nbsp;</b> cells. Best path cost: <b>&nbsp;${totalCost}&nbsp;</b>`;
+    const stats = `<b>&nbsp;${algorithm}&nbsp;</b> explored <b>&nbsp;${exploredCells.length}&nbsp;</b> cells. Best path cost: <b>&nbsp;${totalCost}&nbsp;</b>`;
+  }
+
   $("#stats-popup").html(stats);
   $("#outer-stats-popup").fadeIn();
   setTimeout(() => {
