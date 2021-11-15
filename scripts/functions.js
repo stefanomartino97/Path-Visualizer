@@ -1,4 +1,5 @@
 import { findPath } from "./algorithms/main.js";
+import { mazes } from "./mazes.js";
 let currentModal = 0;
 
 const parameters = {
@@ -122,6 +123,9 @@ function addClicksToNavBar() {
   };
 
   modal();
+
+  //Mazes
+  mazes();
 }
 
 export { addClicksToNavBar };

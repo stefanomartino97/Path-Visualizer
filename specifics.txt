@@ -1,36 +1,8 @@
-# Technologies:
-    # HTML
-    # SCSS
-    # Javascript
-    # jQuery
-
 # Todo
-    # Create NavBar --
-    # Create Grid --
-    # Create Algorithms
-    # Create animations --
-    # Create drag and drop --
-    # Maze (?)
-    # Weight --
-    # Modal --
-    # Grabbing while dragging, visivamente impossibile draggare su wall
-
-# Functionalities:
-    # Given Start and End, find best paths
-    # Place walls
-    # Place bombs (second target)
-    # Real Time change and computation of paths
-    # Selection of algorithm 
-    # Starting modal with tutorial
-    # Add weights (press ctrl+w and drag). Give weight to weights
+    # Maze
+    # After each algorithm, print number of explored cells and total costs
+    # Deal with impossible paths
 
 
-# NavBar buttons:
-    # Algorithms (dropdown)
-    # Mazes and Patterns (dropdown)
-    # Add Bomb (second target)
-    # Visualize
-    # Clear Board 
-    # Clear walls and weights 
-    # Clear path 
-    # Speed: fast | medium | slow
+
+

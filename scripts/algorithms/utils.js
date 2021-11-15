@@ -51,7 +51,7 @@ class Node {
   }
 }
 
-function animate(exploredCells, bestPath, ms) {
+function animate(exploredCells, bestPath, ms, endFunction) {
   let i = 0;
   const exploredInterval = setInterval(() => {
     if (i >= exploredCells.length) {
@@ -64,6 +64,7 @@ function animate(exploredCells, bestPath, ms) {
           document
             .getElementById("visualize")
             .classList.remove("visualize-animation");
+          endFunction();
           return;
         }
 

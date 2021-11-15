@@ -27,6 +27,21 @@ function getStartAndEnd() {
   return [startRow, startColumn, endRow, endColumn];
 }
 
+function displayStats(algorithm, bestPath, exploredCells, weight) {
+  let totalCost = 0;
+  for (const id of bestPath)
+    totalCost += document.getElementById(id).classList.contains("weight")
+      ? weight
+      : 1;
+
+  const stats = `${algorithm} explored <b>&nbsp;${exploredCells.length}&nbsp;</b> cells. Best path cost: <b>&nbsp;${totalCost}&nbsp;</b>`;
+  $("#stats-popup").html(stats);
+  $("#outer-stats-popup").fadeIn();
+  setTimeout(() => {
+    $("#outer-stats-popup").fadeOut();
+  }, 3000);
+}
+
 function findPath(algorithm, speed, weight) {
   //Start visualize animation
   const visualize = document.getElementById("visualize");
@@ -60,7 +75,9 @@ function findPath(algorithm, speed, weight) {
     endColumn,
     weight
   );
-  animate(exploredCells, bestPath, speeds[speed]);
+  animate(exploredCells, bestPath, speeds[speed], () =>
+    displayStats(algorithm, bestPath, exploredCells, weight)
+  );
 }
 
 export { findPath };
