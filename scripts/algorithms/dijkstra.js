@@ -41,6 +41,10 @@ function dijkstra(startRow, startColumn, endRow, endColumn, weight) {
       }
     }
 
+    if (min == Infinity) {
+      return [[], explored];
+    }
+
     explored.push(currentId);
 
     const currentDistance = distances.get(currentId);
